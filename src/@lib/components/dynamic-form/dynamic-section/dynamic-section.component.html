@@ -1,0 +1,4 @@
+<dynamic-section *ngFor="let section of config.sections" [config]="section" [group]="group">
+</dynamic-section>
+<ng-container *ngFor="let field of config.fields;" dynamicField [field]="field" [group]="group">
+</ng-container>

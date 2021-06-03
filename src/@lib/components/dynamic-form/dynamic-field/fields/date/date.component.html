@@ -1,0 +1,9 @@
+<mat-form-field appearance="outline" [formGroup]="group">
+  <mat-label>{{ field.label }}</mat-label>
+  <input matInput [name]="field.name" [matDatepicker]="picker" [formControlName]="field.name ?? ''" maxlength="10">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <ng-container *ngFor="let validation of field.validations;" ngProjectAs="mat-error">
+    <mat-error *ngIf="group.get(field.name ?? '')?.hasError(validation.type)">{{validation.message}}</mat-error>
+  </ng-container>
+</mat-form-field>

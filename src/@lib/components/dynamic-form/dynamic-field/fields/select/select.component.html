@@ -1,0 +1,9 @@
+<mat-form-field appearance="outline" [formGroup]="group">
+  <mat-label>{{ field.label }}</mat-label>
+  <mat-select [formControlName]="field.name ?? ''">
+    <mat-option *ngFor="let item of list" [value]="item.id">{{item.name}}</mat-option>
+  </mat-select>
+  <ng-container *ngFor="let validation of field.validations;" ngProjectAs="mat-error">
+    <mat-error *ngIf="group.get(field.name ?? '')?.hasError(validation.type)">{{validation.message}}</mat-error>
+  </ng-container>
+</mat-form-field>
