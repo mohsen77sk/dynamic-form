@@ -1,3 +1,4 @@
-<button mat-raised-button [type]="field.inputType ?? 'button'" [color]="field.inputType === 'submit' ? 'primary' : ''">
+<button mat-raised-button [type]="field.inputType ?? 'button'" [color]="field.inputType === 'submit' ? 'primary' : ''"
+  [ngClass]="field.class ?? ''">
   {{ field.label }}
 </button>

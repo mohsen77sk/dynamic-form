@@ -25,6 +25,7 @@ export interface IFieldConfig {
   url?: string;
   options?: IFieldOption[];
   validations?: IFieldValidator[];
+  class?: string[];
 }
 
 export interface ISectionConfig {

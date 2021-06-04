@@ -10,6 +10,7 @@ module.exports = {
       './src/**/*.{html,ts}',
     ]
   },
+  important: true,
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},

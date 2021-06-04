@@ -1,4 +1,4 @@
-<mat-form-field appearance="outline" [formGroup]="group">
+<mat-form-field appearance="outline" [formGroup]="group" [ngClass]="field.class ?? ''">
   <mat-label>{{ field.label }}</mat-label>
   <mat-select [formControlName]="field.name ?? ''">
     <mat-option *ngFor="let item of list" [value]="item.id">{{item.name}}</mat-option>
