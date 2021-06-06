@@ -27,7 +27,10 @@ export class SelectComponent implements OnInit {
    */
   ngOnInit(): void {
     if (this.field.options) {
-      this.list = this.field.options;
+      this.list =
+        typeof this.field.options == 'string'
+          ? JSON.parse(this.field.options)
+          : this.field.options;
     } else {
       this.http.get(`${this.field.url}`).subscribe((response: any) => {
         this.list = response;

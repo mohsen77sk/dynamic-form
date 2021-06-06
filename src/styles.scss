@@ -46,3 +46,69 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
+
+.mat-form-field {
+  &.min-width-100 {
+    .mat-form-field-wrapper {
+      .mat-form-field-infix {
+        width: 100px;
+      }
+    }
+  }
+
+  &.min-width-80 {
+    .mat-form-field-wrapper {
+      .mat-form-field-infix {
+        width: 80px;
+      }
+    }
+  }
+
+  &.min-width-60 {
+    .mat-form-field-wrapper {
+      .mat-form-field-infix {
+        width: 60px;
+      }
+    }
+  }
+
+  &.no-error {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+
+      .mat-form-field-subscript-wrapper {
+        top: unset;
+      }
+    }
+  }
+
+  &.no-label {
+    .mat-form-field-wrapper {
+      .mat-form-field-flex {
+        .mat-form-field-outline {
+          top: 0;
+        }
+
+        .mat-form-field-infix {
+          border-top: unset;
+
+          .mat-input-element {
+            margin-top: unset;
+          }
+
+          .mat-form-field-label-wrapper {
+            display: none;
+          }
+
+          .mat-select-arrow-wrapper {
+            transform: unset;
+          }
+        }
+      }
+
+      .mat-form-field-underline {
+        bottom: 0;
+      }
+    }
+  }
+}

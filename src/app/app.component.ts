@@ -10,78 +10,142 @@ import { IFormConfig } from '@lib/types/config.interface';
 export class AppComponent {
   //
   config: IFormConfig = {
-    sections: [
-      {
-        class: ['grid', 'shadow', 'overflow-hidden', 'rounded-md'],
-        sections: [
-          {
-            class: ['px-4', 'py-5', 'bg-white', 'sm:p-6'],
-            sections: [
-              {
-                class: ['grid', 'grid-cols-6', 'gap-6'],
-                sections: [
-                  {
-                    class: ['col-span-6', 'sm:col-span-3'],
-                    fields: [
-                      {
-                        type: 'input',
-                        inputType: 'text',
-                        label: 'نام',
-                        class: ['block', 'w-full'],
-                      },
-                    ],
-                  },
-                  {
-                    class: ['col-span-6', 'sm:col-span-3'],
-                    fields: [
-                      {
-                        type: 'input',
-                        inputType: 'text',
-                        label: 'فامیلی',
-                        class: ['block', 'w-full'],
-                      },
-                    ],
-                  },
-                  {
-                    class: ['col-span-6', 'sm:col-span-3'],
-                    fields: [
-                      {
-                        type: 'select',
-                        inputType: 'select',
-                        label: 'کشور',
-                        options: [
-                          { id: 1, name: 'ایران' },
-                          { id: 2, name: 'خارج' },
-                        ],
-                        class: ['block', 'w-full'],
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            class: ['px-4', 'py-3', 'bg-gray-50', 'flex', 'justify-end'],
-            fields: [
-              {
-                type: 'button',
-                inputType: 'rest',
-                label: 'ریست',
-                class: ['mx-1'],
-              },
-              {
-                type: 'button',
-                inputType: 'submit',
-                label: 'ارسال',
-                class: ['mx-1'],
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    // sections: [
+    //   {
+    //     class: ['row'],
+    //     sections: [
+    //       {
+    //         class: ['col-sm-6'],
+    //         fields: [
+    //           {
+    //             type: 'input',
+    //             inputType: 'text',
+    //             name: 'fName',
+    //             label: 'نام',
+    //             class: ['w-100'],
+    //             validations: [
+    //               { type: 'required', message: 'این فیلد اجباری است' },
+    //             ],
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         class: ['col-sm-6'],
+    //         fields: [
+    //           {
+    //             type: 'input',
+    //             inputType: 'text',
+    //             name: 'lName',
+    //             label: 'فامیلی',
+    //             class: ['w-100'],
+    //             validations: [
+    //               { type: 'required', message: 'این فیلد اجباری است' },
+    //             ],
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         class: ['col-sm-12', 'col-md-6'],
+    //         fields: [
+    //           {
+    //             type: 'input',
+    //             inputType: 'number',
+    //             name: 'postalCode',
+    //             label: 'کدپستی',
+    //             class: ['w-100'],
+    //             validations: [
+    //               {
+    //                 type: 'maxLength',
+    //                 validator: 10,
+    //                 message: 'کد پستی وارد شده، صحیح نیست',
+    //               },
+    //               {
+    //                 type: 'minLength',
+    //                 validator: 10,
+    //                 message: 'کد پستی وارد شده، صحیح نیست',
+    //               },
+    //             ],
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         class: ['col-md-6'],
+    //       },
+    //       {
+    //         class: ['col-md-4', 'col-xl-2'],
+    //         fields: [
+    //           {
+    //             type: 'select',
+    //             inputType: 'select',
+    //             name: 'country',
+    //             label: 'کشور',
+    //             options: [
+    //               { id: 1, name: 'ایران' },
+    //               { id: 2, name: 'خارج' },
+    //             ],
+    //             class: ['w-100'],
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         class: ['col-md-4', 'col-xl-2'],
+    //         fields: [
+    //           {
+    //             type: 'input',
+    //             inputType: 'text',
+    //             name: 'province',
+    //             label: 'استان',
+    //             class: ['w-100'],
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         class: ['col-md-4', 'col-xl-2'],
+    //         fields: [
+    //           {
+    //             type: 'input',
+    //             inputType: 'text',
+    //             name: 'city',
+    //             label: 'شهر',
+    //             class: ['w-100'],
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         class: ['col-12'],
+    //         fields: [
+    //           {
+    //             type: 'input',
+    //             inputType: 'text',
+    //             name: 'address',
+    //             label: 'آدرس',
+    //             class: ['w-100'],
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     class: ['d-flex', 'justify-content-end'],
+    //     fields: [
+    //       {
+    //         type: 'button',
+    //         inputType: 'reset',
+    //         label: 'ریست',
+    //         class: ['mx-1'],
+    //       },
+    //       {
+    //         type: 'button',
+    //         inputType: 'submit',
+    //         label: 'ارسال',
+    //         class: ['mx-1'],
+    //       },
+    //     ],
+    //   },
+    // ],
   };
+
+  result: any;
 
   /**
    * constructor
@@ -93,11 +157,20 @@ export class AppComponent {
   // -----------------------------------------------------------------------------------------------------
 
   /**
+   * set new config
+   *
+   * @param event event
+   */
+  setConfig(event: any): void {
+    this.config = event;
+  }
+
+  /**
    * submit
    *
    * @param event event
    */
   onSubmit(event: any): void {
-    console.log(event);
+    this.result = JSON.stringify(event);
   }
 }

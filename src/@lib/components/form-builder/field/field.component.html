@@ -1,0 +1,65 @@
+<form [formGroup]="form" style="width: 100%;">
+
+  <fieldset *ngIf="form">
+
+    <div class="row">
+
+      <mat-form-field appearance="outline" class="col no-error min-width-60">
+        <mat-label>نوع</mat-label>
+        <mat-select formControlName="type" (selectionChange)="changeType()" required>
+          <mat-option value="input">
+            input
+          </mat-option>
+          <mat-option value="date">
+            date
+          </mat-option>
+          <mat-option value="select">
+            select
+          </mat-option>
+          <mat-option value="checkbox">
+            checkbox
+          </mat-option>
+          <mat-option value="button">
+            button
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <ng-container *ngIf="form.get('type')?.value">
+
+        <mat-form-field appearance="outline" class="col no-error min-width-60">
+          <mat-label>نوع ورودی</mat-label>
+          <mat-select formControlName="inputType">
+            <mat-option *ngFor="let item of inputTypeList" [value]="item.key">
+              {{ item.value }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col no-error" *ngIf="form.get('type')?.value != 'button'">
+          <mat-label>نام</mat-label>
+          <input matInput type="text" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col no-error">
+          <mat-label>عنوان</mat-label>
+          <input matInput type="text" formControlName="label">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col no-error" *ngIf="form.get('type')?.value != 'button'">
+          <mat-label>مقدار پیش فرض</mat-label>
+          <input matInput type="text" formControlName="value">
+        </mat-form-field>
+
+      </ng-container>
+
+      <div class="col d-flex flex-row align-self-center">
+        <button mat-raised-button type="button" color="warn" (click)="removeFrom()">
+          حذف
+        </button>
+      </div>
+    </div>
+
+  </fieldset>
+
+</form>

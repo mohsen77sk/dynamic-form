@@ -1,0 +1,39 @@
+<form [formGroup]="form" style="width: 100%;">
+
+  <fieldset *ngIf="form">
+
+    <div class="row">
+      <div class="d-flex flex-row align-self-center mb-2">
+        <button mat-raised-button type="button" color="primary" class="mx-1" (click)="createSection()">
+          ایجاد ناحیه
+        </button>
+        <button mat-raised-button type="button" color="accent" class="mx-1" (click)="createField()">
+          ایجاد فیلد
+        </button>
+        <button mat-raised-button type="button" color="warn" class="mx-1" (click)="removeFrom()" *ngIf="form.parent">
+          حذف
+        </button>
+      </div>
+      <mat-form-field appearance="outline" class="w-100 no-error no-label">
+        <mat-chip-list #chipList aria-label="class selection">
+          <mat-chip *ngFor="let cls of classList" selectable="true" removable="true" (removed)="remove(cls)">
+            {{cls}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="نوشتن کلاس ..." [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes" matChipInputAddOnBlur="true"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+
+    <div class="">
+      <app-section *ngFor="let item of sections.controls;let i = index;" [InputForm]="item" [InputIndexForm]="i">
+      </app-section>
+      <app-field *ngFor="let item of fields.controls;let i = index;" [InputForm]="item" [InputIndexForm]="i">
+      </app-field>
+    </div>
+
+  </fieldset>
+
+</form>

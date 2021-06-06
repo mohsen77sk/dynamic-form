@@ -1,0 +1,9 @@
+<form class="form-builder" [formGroup]="form" (submit)="onSubmit($event)">
+
+  <app-section [InputForm]="form"></app-section>
+
+  <div class="d-flex justify-content-end">
+    <button mat-raised-button type="submit" color="primary">نمایش</button>
+  </div>
+
+</form>
